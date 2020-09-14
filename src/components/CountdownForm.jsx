@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 class CountdownForm extends React.Component {
      onSubmit(e) {

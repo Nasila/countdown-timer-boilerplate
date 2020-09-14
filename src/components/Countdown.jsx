@@ -1,6 +1,7 @@
 import React from 'react';
 import Clock from './Clock';
 import CountdownForm from './CountdownForm';
+import './style.css';
 
 class Countdown extends React.Component {
     constructor() {
@@ -22,8 +23,7 @@ class Countdown extends React.Component {
         this.timer = setInterval(() => {
             if(this.state.count > 0) {
                 this.setState({
-                    count: this.state.count - 1});
-                    console.log(this.state.count);    
+                    count: this.state.count - 1});  
                }
             if(this.state.count === 0) {
                 clearInterval(this.timer);
@@ -37,9 +37,8 @@ class Countdown extends React.Component {
        
     render() {
         const {count} = this.state;
-        console.log("count",count);
         return (
-            <div>
+            <div className="clock-count">
                 <Clock timeInSeconds={count}/>
                 <CountdownForm onSetCountdownTime={time => this.startTimer(time)}/>
             </div>
